@@ -26,7 +26,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( "myharbor.com:30002", registryCredential ) {
+          docker.withRegistry( "http://myharbor.com:30002", registryCredential ) {
             dockerImage.push()
           }
         }
